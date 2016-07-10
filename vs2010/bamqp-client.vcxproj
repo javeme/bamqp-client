@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DE356D6C-224A-4048-8315-CBCF27CD1B59}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>bamqpclient</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\c++\c++vs2010\brpc\include\bLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(TargetDir)\bluemeiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\c++\c++vs2010\brpc\include\bLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(TargetDir)\bluemeiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\amqpcpp\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\amqpcpp\include\address.h" />
+    <ClInclude Include="..\amqpcpp\include\array.h" />
+    <ClInclude Include="..\amqpcpp\include\booleanset.h" />
+    <ClInclude Include="..\amqpcpp\include\buffer.h" />
+    <ClInclude Include="..\amqpcpp\include\bytebuffer.h" />
+    <ClInclude Include="..\amqpcpp\include\callbacks.h" />
+    <ClInclude Include="..\amqpcpp\include\channel.h" />
+    <ClInclude Include="..\amqpcpp\include\channelimpl.h" />
+    <ClInclude Include="..\amqpcpp\include\classes.h" />
+    <ClInclude Include="..\amqpcpp\include\connection.h" />
+    <ClInclude Include="..\amqpcpp\include\connectionhandler.h" />
+    <ClInclude Include="..\amqpcpp\include\connectionimpl.h" />
+    <ClInclude Include="..\amqpcpp\include\decimalfield.h" />
+    <ClInclude Include="..\amqpcpp\include\deferred.h" />
+    <ClInclude Include="..\amqpcpp\include\deferredcancel.h" />
+    <ClInclude Include="..\amqpcpp\include\deferredconsumer.h" />
+    <ClInclude Include="..\amqpcpp\include\deferredconsumerbase.h" />
+    <ClInclude Include="..\amqpcpp\include\deferreddelete.h" />
+    <ClInclude Include="..\amqpcpp\include\deferredget.h" />
+    <ClInclude Include="..\amqpcpp\include\deferredqueue.h" />
+    <ClInclude Include="..\amqpcpp\include\endian.h" />
+    <ClInclude Include="..\amqpcpp\include\entityimpl.h" />
+    <ClInclude Include="..\amqpcpp\include\envelope.h" />
+    <ClInclude Include="..\amqpcpp\include\exchangetype.h" />
+    <ClInclude Include="..\amqpcpp\include\field.h" />
+    <ClInclude Include="..\amqpcpp\include\fieldproxy.h" />
+    <ClInclude Include="..\amqpcpp\include\flags.h" />
+    <ClInclude Include="..\amqpcpp\include\libev.h" />
+    <ClInclude Include="..\amqpcpp\include\libevent.h" />
+    <ClInclude Include="..\amqpcpp\include\login.h" />
+    <ClInclude Include="..\amqpcpp\include\message.h" />
+    <ClInclude Include="..\amqpcpp\include\metadata.h" />
+    <ClInclude Include="..\amqpcpp\include\monitor.h" />
+    <ClInclude Include="..\amqpcpp\include\numericfield.h" />
+    <ClInclude Include="..\amqpcpp\include\outbuffer.h" />
+    <ClInclude Include="..\amqpcpp\include\receivedframe.h" />
+    <ClInclude Include="..\amqpcpp\include\stack_ptr.h" />
+    <ClInclude Include="..\amqpcpp\include\stringfield.h" />
+    <ClInclude Include="..\amqpcpp\include\table.h" />
+    <ClInclude Include="..\amqpcpp\include\tcpchannel.h" />
+    <ClInclude Include="..\amqpcpp\include\tcpconnection.h" />
+    <ClInclude Include="..\amqpcpp\include\tcphandler.h" />
+    <ClInclude Include="..\amqpcpp\include\watchable.h" />
+    <ClInclude Include="..\amqpcpp\src\addressinfo.h" />
+    <ClInclude Include="..\amqpcpp\src\basicackframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basiccancelframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basiccancelokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicconsumeframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicconsumeokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicdeliverframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicgetemptyframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicgetframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicgetokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicheaderframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicnackframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicpublishframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicqosframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicqosokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicrecoverasyncframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicrecoverframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicrecoverokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicrejectframe.h" />
+    <ClInclude Include="..\amqpcpp\src\basicreturnframe.h" />
+    <ClInclude Include="..\amqpcpp\src\bodyframe.h" />
+    <ClInclude Include="..\amqpcpp\src\channelcloseframe.h" />
+    <ClInclude Include="..\amqpcpp\src\channelcloseokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\channelflowframe.h" />
+    <ClInclude Include="..\amqpcpp\src\channelflowokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\channelframe.h" />
+    <ClInclude Include="..\amqpcpp\src\channelopenframe.h" />
+    <ClInclude Include="..\amqpcpp\src\channelopenokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectioncloseframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectioncloseokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectionframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectionopenframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectionopenokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectionsecureframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectionsecureokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectionstartframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectionstartokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectiontuneframe.h" />
+    <ClInclude Include="..\amqpcpp\src\connectiontuneokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\consumedmessage.h" />
+    <ClInclude Include="..\amqpcpp\src\exception.h" />
+    <ClInclude Include="..\amqpcpp\src\exchangebindframe.h" />
+    <ClInclude Include="..\amqpcpp\src\exchangebindokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\exchangedeclareframe.h" />
+    <ClInclude Include="..\amqpcpp\src\exchangedeclareokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\exchangedeleteframe.h" />
+    <ClInclude Include="..\amqpcpp\src\exchangedeleteokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\exchangeframe.h" />
+    <ClInclude Include="..\amqpcpp\src\exchangeunbindframe.h" />
+    <ClInclude Include="..\amqpcpp\src\exchangeunbindokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\extframe.h" />
+    <ClInclude Include="..\amqpcpp\src\frame.h" />
+    <ClInclude Include="..\amqpcpp\src\framecheck.h" />
+    <ClInclude Include="..\amqpcpp\src\headerframe.h" />
+    <ClInclude Include="..\amqpcpp\src\heartbeatframe.h" />
+    <ClInclude Include="..\amqpcpp\src\includes.h" />
+    <ClInclude Include="..\amqpcpp\src\messageimpl.h" />
+    <ClInclude Include="..\amqpcpp\src\methodframe.h" />
+    <ClInclude Include="..\amqpcpp\src\pipe.h" />
+    <ClInclude Include="..\amqpcpp\src\protocolexception.h" />
+    <ClInclude Include="..\amqpcpp\src\protocolheaderframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queuebindframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queuebindokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queuedeclareframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queuedeclareokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queuedeleteframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queuedeleteokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queueframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queuepurgeframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queuepurgeokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queueunbindframe.h" />
+    <ClInclude Include="..\amqpcpp\src\queueunbindokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\reducedbuffer.h" />
+    <ClInclude Include="..\amqpcpp\src\returnedmessage.h" />
+    <ClInclude Include="..\amqpcpp\src\tcpclosed.h" />
+    <ClInclude Include="..\amqpcpp\src\tcpconnected.h" />
+    <ClInclude Include="..\amqpcpp\src\tcpinbuffer.h" />
+    <ClInclude Include="..\amqpcpp\src\tcpoutbuffer.h" />
+    <ClInclude Include="..\amqpcpp\src\tcpresolver.h" />
+    <ClInclude Include="..\amqpcpp\src\tcpstate.h" />
+    <ClInclude Include="..\amqpcpp\src\transactioncommitframe.h" />
+    <ClInclude Include="..\amqpcpp\src\transactioncommitokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\transactionframe.h" />
+    <ClInclude Include="..\amqpcpp\src\transactionrollbackframe.h" />
+    <ClInclude Include="..\amqpcpp\src\transactionrollbackokframe.h" />
+    <ClInclude Include="..\amqpcpp\src\transactionselectframe.h" />
+    <ClInclude Include="..\amqpcpp\src\transactionselectokframe.h" />
+    <ClInclude Include="..\bamqp\ChannelFactory.h" />
+    <ClInclude Include="..\bamqp\IOCPBuffer.h" />
+    <ClInclude Include="..\bamqp\IOCPChannelFactory.h" />
+    <ClInclude Include="..\bamqp\IOCPConnection.h" />
+    <ClInclude Include="..\bamqp\IOCPHandler.h" />
+    <ClInclude Include="..\bamqp\PublisherConsumer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\amqpcpp\src\array.cpp" />
+    <ClCompile Include="..\amqpcpp\src\channelimpl.cpp" />
+    <ClCompile Include="..\amqpcpp\src\connectionimpl.cpp" />
+    <ClCompile Include="..\amqpcpp\src\deferredcancel.cpp" />
+    <ClCompile Include="..\amqpcpp\src\deferredconsumer.cpp" />
+    <ClCompile Include="..\amqpcpp\src\deferredconsumerbase.cpp" />
+    <ClCompile Include="..\amqpcpp\src\deferredget.cpp" />
+    <ClCompile Include="..\amqpcpp\src\field.cpp" />
+    <ClCompile Include="..\amqpcpp\src\flags.cpp" />
+    <ClCompile Include="..\amqpcpp\src\receivedframe.cpp" />
+    <ClCompile Include="..\amqpcpp\src\table.cpp" />
+    <ClCompile Include="..\amqpcpp\src\watchable.cpp" />
+    <ClCompile Include="..\bamqp\IOCPChannelFactory.cpp" />
+    <ClCompile Include="..\bamqp\IOCPConnection.cpp" />
+    <ClCompile Include="..\bamqp\testMQ.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

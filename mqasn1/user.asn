@@ -1,0 +1,23 @@
+--==================================================
+ --   test user by rabbitMQ
+ 
+QvVNM DEFINITIONS IMPLICIT TAGS ::= BEGIN
+
+
+--请求
+AsnUserLoginReqeust ::= SEQUENCE
+{
+    name             OCTET STRING,				--用户名
+    password         OCTET STRING             	--密码
+}
+
+--响应
+AsnUserLoginResponse ::= SEQUENCE
+{
+    success              BOOLEAN,               --是否成功
+    error           OCTET STRING,				--失败描述
+    counter              INTEGER              	--登录次数
+}
+
+END
+
